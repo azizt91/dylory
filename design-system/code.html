@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-container": "#494a4a",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#8e1b3b",
+                        "secondary": "#7b5455",
+                        "secondary-container": "#fecbcb",
+                        "outline-variant": "#debfc2",
+                        "tertiary": "#323434",
+                        "primary-fixed-dim": "#ffb2bc",
+                        "on-primary-fixed": "#400013",
+                        "surface-container-high": "#e8e8e8",
+                        "outline": "#8a7174",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-container": "#b9baba",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#6d0026",
+                        "secondary-fixed-dim": "#ecbaba",
+                        "on-error": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#574144",
+                        "inverse-on-surface": "#f0f1f1",
+                        "inverse-primary": "#ffb2bc",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed": "#e3e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#613d3e",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-primary-container": "#ff9fad",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffd9dd",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-secondary-fixed": "#2f1314",
+                        "on-secondary-container": "#7a5354",
+                        "surface-tint": "#aa314e",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#891738",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed": "#ffdad9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .silver-edge {
+            box-shadow: inset 0 0 0 1px rgba(222, 191, 194, 0.3);
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-rose-200/30 dark:border-rose-800/30 bg-surface/70 backdrop-blur-xl flex justify-between items-center px-12 py-6 w-full">
+<div class="text-2xl font-bold tracking-widest text-rose-950 dark:text-rose-50 font-headline uppercase">
+            DYLORY
+        </div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-rose-900 dark:text-rose-100 border-b border-rose-300 dark:border-rose-700 pb-1 font-headline tracking-[0.02em] hover:text-rose-950 transition-colors duration-300" href="#">Collections</a>
+<a class="text-rose-800/60 dark:text-rose-200/60 font-label uppercase text-xs tracking-widest hover:text-rose-950 transition-colors duration-300" href="#">Le Rosier</a>
+<a class="text-rose-800/60 dark:text-rose-200/60 font-label uppercase text-xs tracking-widest hover:text-rose-950 transition-colors duration-300" href="#">Atelier</a>
+<a class="text-rose-800/60 dark:text-rose-200/60 font-label uppercase text-xs tracking-widest hover:text-rose-950 transition-colors duration-300" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-6 text-rose-900">
+<span class="material-symbols-outlined cursor-pointer" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-90" data-alt="luxury clear perfume bottle on a sleek white podium, scattered deep red rose petals falling in soft focus, dramatic high-fashion lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbQN3lbb3AxsKlcvzTWFESX5u62KA_E0S803gcP3po1YT51GOOC2yJP00SvewOOh1SH9bM1LJyLY0mdJ5uVYXDD8yWM1pWvAw5Qhy6sDQ7HnZbImnWNfdz-orCR4y4QZnZpVUI7TnHr-vWzKuaBIwKTgQ1tYHSvDKPLCvlrTxQNU5t8z3evMj_H6QKEe1Ke2QY83FPxlDxtxvp6r5IkPS1kviuIW3iahOCEOQ4svvLHL78wzmWExGyPF90QGfu4yp6R6Txoud0fPnC"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-transparent to-surface"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl">
+<h1 class="font-headline text-5xl md:text-8xl text-primary tracking-tight leading-tight mb-8">
+                Cinta Punya Aromanya Sendiri
+            </h1>
+<p class="font-body text-lg md:text-xl text-on-surface/70 tracking-widest uppercase mb-12 max-w-2xl mx-auto">
+                A fragrance crafted for the souls who speak in whispers of velvet and rose.
+            </p>
+<button class="bg-primary text-on-primary px-12 py-5 font-label tracking-widest uppercase text-sm hover:opacity-90 transition-all duration-300">
+                Explore the Atelier
+            </button>
+</div>
+</header>
+<!-- Section 1: The Story -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-6 block">Our Heritage</span>
+<h2 class="font-headline text-4xl md:text-6xl text-on-surface mb-8 leading-tight">Dyan &amp; Ryan: <br/>A Journey of Two Hearts</h2>
+<div class="space-y-6 font-body text-on-surface/80 leading-relaxed text-lg">
+<p>DYLORY began as a private olfactory dialogue between two lovers. Dyan, a botanical artist, and Ryan, a master of subtle chemistry, sought to encapsulate their shared moments into lingering notes.</p>
+<p>Every bottle is a chapter of a love story—vibrant, intimate, and eternally romantic. We don't just create perfumes; we preserve memories in silver-edged glass.</p>
+</div>
+<div class="mt-12">
+<a class="inline-flex items-center gap-4 text-primary font-bold tracking-widest uppercase text-xs group" href="#">
+                        Read Our Monograph
+                        <span class="h-[1px] w-12 bg-outline-variant group-hover:w-20 transition-all duration-500"></span>
+</a>
+</div>
+</div>
+<div class="order-1 md:order-2 relative aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="intimate warm portrait of a couple holding hands in a sun-drenched flower garden, focus on the emotion and soft atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALJpjn3dBUgN75LUGbFRpZ3U4hvRqMG3Wx_TRXjx5-dUaXd6PbXW6rFs5Baru5JvoHCiLnpp42Z7AQGBjfwwCLYQnS_JQmt--JlDco5a9Ivx3QMK1wJFykaNddDeJ_CkHkis-dhOUOF9_CQncNFkgHX_Cmud1Ed4_RgWKR6FTI-wX4Ev-rogm9Xi1mEn6gCP7w6nS88zwt8ALZWIq0iu5Qa_fxh3uXkZn1eeIEQv_thowRa4bBeB3F2A84OnT4semmhslqZunhna5K"/>
+<div class="absolute -bottom-8 -left-8 w-48 h-48 bg-primary-fixed-dim/30 backdrop-blur-sm -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Section 2: Collections -->
+<section class="py-32 bg-surface">
+<div class="px-12 mb-20 text-center">
+<h2 class="font-headline text-4xl text-on-surface mb-4">The Collections</h2>
+<div class="w-24 h-[1px] bg-outline mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 h-[819px]">
+<div class="relative group cursor-pointer overflow-hidden border-r border-outline-variant/20">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="ethereal woman in a silk dress surrounded by pink roses, soft editorial lighting, luxury perfume brand aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3kpNzbsSzifOv1mxb_sv1OTb97cSLCg9EyIPJJw5O_CxsIUqITK5SOYCEUzqKLAKZPtXB8nXg_Q0sBF_GkqkXx3sR0z_b5v-CFkTHhtJ7F9MsmjwI45oSyeSU0JjhSdvoR7XQnkbwlqyU432Sp0hKv2DTWoXv2aNU9qG7jpX3_Cc8uZkJOggMcu6e42vpfzWnoAnE4cOkiOlw99Z0YTZBs1V2Vg_Z_v6WotsX6X6NT-J9_BY6Bj5CY4uCFbZXOvPv0SeWUfnM073q"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-12 left-12 text-on-primary">
+<h3 class="font-headline text-4xl mb-2">For Her</h3>
+<p class="font-label tracking-widest uppercase text-xs">Petals &amp; Silks</p>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="sophisticated man in a charcoal suit adjusting cufflinks, moody dark aesthetic, luxury masculine fragrance theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs3gEjCDtfggONBvWwU4i1Klx-UcdPV4e1XZ6bBETF7E0B4f_QqvVd7qDAp4ICAKtcm5bG-rRLY1Hvwc6i07UdimLhGo8jnSLyUZedrlqCTA9s7YAWpwXadeq10NiS_1BbLDd2Z5XXtJP3wHB04yUf2Dw14-w8w2xXIWMq7Duj5WDR-8J5PxSq5zbKmZ6ZGcvYhElAGRenYDDpPObaWc4xTETBTi1dDlvO-me-mcMEy9nUxRsdxk6a8WYCOtNocmZEMeR2hXO5bXu5"/>
+<div class="absolute inset-0 bg-on-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-12 left-12 text-on-primary">
+<h3 class="font-headline text-4xl mb-2">For Him</h3>
+<p class="font-label tracking-widest uppercase text-xs">Woods &amp; Amber</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Best Sellers -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-20">
+<div>
+<span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-4 block">Seasonal Edit</span>
+<h2 class="font-headline text-5xl text-on-surface">Best Sellers</h2>
+</div>
+<a class="font-label text-xs tracking-widest uppercase border-b border-outline pb-1" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] mb-8 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="black elegant perfume bottle on a reflective black surface, dramatic lighting, luxury fragrance 'Black Opium'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnQcAziPYmvWI21NXILXLQyvShZhoVbymDXQLUd0rZ1VX5MmiJ_w6zNsMI728DCtGfgsDXisGLhyimXE0XTwY15qSwqQV8MdpQJQPcY3RD-Z-belnsGAVE0NUTB4k5H5seCHpGAIHzIcvAMkucmyUhimtamdDb2l76Lg6UToIwF_w0LgxU7B8pKkOdCuJAeHULx5qBxhEtgRJQDgOiCA93pF8DiUF9is7IZA8fFzJrNA-yMwAPHqCIt5Lsp3yjB22q00aLo6_gg9P7"/>
+<div class="absolute top-4 right-4 bg-primary px-3 py-1 text-on-primary text-[10px] tracking-widest uppercase">Essential</div>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline text-2xl text-on-surface">Black Opium</h4>
+<p class="font-body text-sm text-on-surface/50 italic mb-4">Notes of coffee, vanilla, and white flowers.</p>
+<p class="font-label text-primary font-bold">Rp 1.450.000</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] mb-8 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="red and gold luxury perfume bottle on a stone surface, 'Baccarat Rouge' aesthetic, warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvxyN424CDwH0IymITxt5pcBnXTAOAR4j0NmdB_W9LJf2Iubeld46NdMwa4uqENYqjKsp_GgvL8K93uzFhi8_6i-E5MMSs6_URgTnQLpYheGDg3r6WlGw8ozEENOP4vUvuLcQjojPBwn4eMpuIxsPmvW6f7okWFMQwbe1Wc5XcH_VpuJzLleFV-EaHRP4HRYcB6903DrjYepTBrwvorwU-f-jzpP1AuqSPainx22te5CRtY3_t465KUrPbAniBYP9zRMChYqm1YUfK"/>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline text-2xl text-on-surface">Baccarat Rouge</h4>
+<p class="font-body text-sm text-on-surface/50 italic mb-4">Saffron, jasmine, and cedarwood.</p>
+<p class="font-label text-primary font-bold">Rp 1.850.000</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] mb-8 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="soft pink and clear perfume bottle with floral motifs, airy and light composition, 'Taylor Swift' inspired fragrance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc9_kDypXBA3GtIwAA2c76yRZsCu-ouAKuqPfmylyMZQQK2HVa6vzxIgPeP3MxWM_aAXJJb-HFPFlABtTQILe6qhf12X2keDsiVmkKnCgW45HQQMmbggzyX8IJn4ov36SlY0RwAaOSvmKh5iaNBCPDeep6mHyM8NcN21o4KQWubjswBbmgYtqRrJISziQLLOJ95Fc96vq4AmcqM0Ai4Iip-1Z0jLkDTlSMmVJZda7I_zBccy_D4pYH688Fcw_7R3Fk8fjnr34OpeBY"/>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline text-2xl text-on-surface">Taylor Swift</h4>
+<p class="font-body text-sm text-on-surface/50 italic mb-4">Wild berries, freesia, and warm amber.</p>
+<p class="font-label text-primary font-bold">Rp 1.250.000</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SideNavBar (WhatsApp Floating CTA) -->
+<a class="fixed bottom-8 right-8 bg-rose-900 dark:bg-rose-950 text-white flex items-center justify-center p-4 aspect-square rounded-none shadow-2xl shadow-rose-950/10 hover:scale-105 hover:bg-rose-800 transition-transform duration-500 z-[100] group" href="#">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label font-bold uppercase tracking-widest text-[8px]">Order via WhatsApp</span>
+</div>
+</a>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-zinc-950 w-full py-20 px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold font-headline text-rose-950 dark:text-rose-50 mb-6 uppercase tracking-widest">DYLORY</div>
+<p class="font-body text-sm text-rose-900/50 dark:text-rose-100/50 leading-relaxed">
+                    Crafting olfactory experiences that bridge the heart and the senses. Made with love, for love.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs font-bold uppercase tracking-widest mb-2">Explore</span>
+<a class="text-rose-900/50 dark:text-rose-100/50 hover:text-rose-950 underline decoration-rose-200 underline-offset-8 transition-all font-label text-sm" href="#">The Monograph</a>
+<a class="text-rose-900/50 dark:text-rose-100/50 hover:text-rose-950 underline decoration-rose-200 underline-offset-8 transition-all font-label text-sm" href="#">Collections</a>
+<a class="text-rose-900/50 dark:text-rose-100/50 hover:text-rose-950 underline decoration-rose-200 underline-offset-8 transition-all font-label text-sm" href="#">Best Sellers</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs font-bold uppercase tracking-widest mb-2">Client Services</span>
+<a class="text-rose-900/50 dark:text-rose-100/50 hover:text-rose-950 underline decoration-rose-200 underline-offset-8 transition-all font-label text-sm" href="#">Shipping &amp; Returns</a>
+<a class="text-rose-900/50 dark:text-rose-100/50 hover:text-rose-950 underline decoration-rose-200 underline-offset-8 transition-all font-label text-sm" href="#">Privacy Policy</a>
+<a class="text-rose-900/50 dark:text-rose-100/50 hover:text-rose-950 underline decoration-rose-200 underline-offset-8 transition-all font-label text-sm" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs font-bold uppercase tracking-widest mb-2">Newsletter</span>
+<p class="text-xs text-rose-900/50 mb-2">Join our olfactory circle.</p>
+<div class="flex border-b border-outline-variant pb-2">
+<input class="bg-transparent border-none focus:ring-0 w-full text-xs placeholder:text-rose-900/30 uppercase tracking-widest" placeholder="Email Address" type="email"/>
+<button class="text-primary material-symbols-outlined" data-icon="arrow_forward">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-rose-200/20 text-center">
+<p class="font-body text-xs text-rose-900/50 tracking-widest uppercase">
+                © 2024 DYLORY Parfums. All Rights Reserved.
+            </p>
+</div>
+</footer>
+
+```</body></html>

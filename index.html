@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DYLORY Parfums — Cinta Punya Aromanya Sendiri</title>
+  <meta name="description"
+    content="DYLORY Parfums — Satu rasa, dua hati, dan ribuan cerita. Parfum premium yang terinspirasi dari kisah cinta Dyan & Ryan. Koleksi wangi eksklusif untuk wanita dan pria." />
+  <meta name="keywords"
+    content="parfum, perfume, DYLORY, luxury fragrance, parfum premium, parfum wanita, parfum pria, Dyan Ryan" />
+  <meta name="author" content="DYLORY Parfums" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dylory.netlify.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DYLORY Parfums — Cinta Punya Aromanya Sendiri" />
+  <meta property="og:description"
+    content="Parfum premium terinspirasi kisah cinta Dyan & Ryan. Satu rasa, dua hati, dan ribuan cerita." />
+  <meta property="og:image" content="/images/dylory-parfum.jpg" />
+  <meta property="og:url" content="https://dylory.netlify.app/" />
+  <meta property="og:site_name" content="DYLORY Parfums" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DYLORY Parfums — Cinta Punya Aromanya Sendiri" />
+  <meta name="twitter:description"
+    content="Parfum premium terinspirasi kisah cinta. Koleksi eksklusif wanita & pria." />
+  <meta name="twitter:image" content="/images/dylory-parfum.jpg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Brand",
+        "name": "DYLORY Parfums",
+        "description": "Parfum premium terinspirasi kisah cinta Dyan & Ryan. Satu rasa, dua hati, dan ribuan cerita.",
+        "logo": "/images/dylory-parfum.jpg",
+        "url": "https://dylory.netlify.app/",
+        "slogan": "Cinta Punya Aromanya Sendiri"
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "DYLORY Parfums",
+        "description": "Parfum premium berkualitas tinggi dengan aroma eksklusif untuk wanita dan pria.",
+        "url": "https://dylory.netlify.app/",
+        "telephone": "+6285951811245",
+        "image": "/images/dylory-parfum.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "ID"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+6285951811245",
+          "contactType": "sales",
+          "availableLanguage": ["Indonesian", "English"]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vite Entry -->
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body class="antialiased">
+
+  <!-- ════════════════════════════════════════════
+       NAVIGATION — Glassmorphism + Silver Edge
+       ════════════════════════════════════════════ -->
+  <nav id="main-nav"
+    class="fixed top-0 w-full z-50 glass-nav flex justify-between items-center px-6 md:px-12 py-5 transition-all duration-500">
+    <a href="#hero" class="text-2xl font-bold tracking-[0.25em] text-on-surface font-headline uppercase select-none">
+      DYLORY
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex gap-10 items-center">
+      <a href="#story"
+        class="text-on-surface/60 font-label uppercase text-xs tracking-[0.2em] hover:text-primary transition-colors duration-300">Cerita
+        Kami</a>
+      <a href="#collections"
+        class="text-on-surface/60 font-label uppercase text-xs tracking-[0.2em] hover:text-primary transition-colors duration-300">Koleksi</a>
+      <a href="#bestsellers-women"
+        class="text-on-surface/60 font-label uppercase text-xs tracking-[0.2em] hover:text-primary transition-colors duration-300">Best
+        Sellers</a>
+      <a href="#contact"
+        class="text-on-surface/60 font-label uppercase text-xs tracking-[0.2em] hover:text-primary transition-colors duration-300">Hubungi
+        Kami</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button id="nav-toggle" class="md:hidden flex flex-col gap-[5px] p-2 group" aria-label="Open menu">
+      <span class="block w-6 h-[1.5px] bg-on-surface transition-all duration-300 group-hover:bg-primary"></span>
+      <span class="block w-4 h-[1.5px] bg-on-surface transition-all duration-300 group-hover:bg-primary"></span>
+      <span class="block w-6 h-[1.5px] bg-on-surface transition-all duration-300 group-hover:bg-primary"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu"
+    class="mobile-menu fixed inset-0 z-[200] bg-surface flex flex-col items-center justify-center gap-10">
+    <button id="nav-close" class="absolute top-6 right-6 text-on-surface p-2" aria-label="Close menu">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a href="#hero" class="font-headline text-3xl text-on-surface tracking-wide">Beranda</a>
+    <a href="#story" class="font-headline text-3xl text-on-surface tracking-wide">Cerita Kami</a>
+    <a href="#collections" class="font-headline text-3xl text-on-surface tracking-wide">Koleksi</a>
+    <a href="#bestsellers-women" class="font-headline text-3xl text-on-surface tracking-wide">Best Sellers</a>
+    <a href="#contact" class="font-headline text-3xl text-on-surface tracking-wide">Hubungi Kami</a>
+    <a href="https://wa.me/6285951811245?text=Halo%20DYLORY%2C%20saya%20tertarik%20untuk%20memesan%20parfum..."
+      class="btn-primary mt-4" target="_blank" rel="noopener">Order via WhatsApp</a>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       HERO — Cinematic Full-Viewport
+       ════════════════════════════════════════════ -->
+  <header id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-surface">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="/images/hero-bg.png" alt="DYLORY Parfums luxury perfume bottle with rose petals"
+        class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-surface/30 via-transparent to-surface"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-surface/50 via-transparent to-surface/50"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-6 max-w-5xl">
+      <p class="font-label text-xs tracking-[0.4em] uppercase text-primary-fixed-dim mb-8 hero-float">
+        DYLORY Parfums
+      </p>
+      <h1
+        class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.1] mb-8 drop-shadow-lg">
+        Satu rasa, dua hati,<br />dan ribuan cerita
+      </h1>
+      <p
+        class="font-body text-base sm:text-lg md:text-xl text-white/80 tracking-widest uppercase mb-12 max-w-2xl mx-auto">
+        Cinta punya aromanya sendiri
+      </p>
+      <a href="https://wa.me/6285951811245?text=Halo%20DYLORY%2C%20saya%20tertarik%20untuk%20memesan%20parfum..."
+        target="_blank" rel="noopener" class="btn-primary inline-block">
+        Pesan Sekarang
+      </a>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════
+       STORY — Dyan & Ryan Narrative
+       ════════════════════════════════════════════ -->
+  <section id="story" class="py-20 md:py-32 px-6 md:px-12 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center fade-in-section">
+      <!-- Text -->
+      <div class="order-2 md:order-1 md:pr-8" style="margin-left: 2%; margin-right: 8%;">
+        <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-6 block">Cerita Kami</span>
+        <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface mb-8 leading-tight">
+          Dyan &amp; Ryan:<br />Harmoni Dua Hati
+        </h2>
+        <div class="space-y-6 font-body text-on-surface/80 leading-relaxed text-base md:text-lg">
+          <p>
+            DYLORY lahir dari kisah cinta yang sederhana namun mendalam — kisah <strong>Dyan</strong> dan
+            <strong>Ryan</strong>. Dua jiwa yang berbeda, namun saling melengkapi. Dyan dengan kelembutan dan
+            kepekaannya, Ryan dengan keteguhan dan kehangatan hatinya.
+          </p>
+          <p>
+            Nama <strong>DYLORY</strong> sendiri adalah penggabungan dari dua nama mereka — sebuah simbol bahwa cinta
+            sejati adalah tentang harmoni, tentang bagaimana dua dunia melebur menjadi satu cerita yang indah.
+          </p>
+          <p>
+            Setiap botol DYLORY menyimpan kenangan — aroma tawa di pagi hari, kehangatan pelukan di senja, dan
+            janji-janji yang diucapkan tanpa kata. Kami tidak hanya menciptakan parfum, kami mengabadikan momen-momen
+            yang tak tergantikan dalam setiap tetesannya.
+          </p>
+          <p class="font-headline italic text-primary text-lg md:text-xl">
+            "Karena cinta bukan hanya dirasakan — cinta punya aromanya sendiri."
+          </p>
+        </div>
+        <div class="mt-12">
+          <a href="#collections" class="link-expand text-primary font-bold tracking-widest uppercase text-xs">
+            Jelajahi Koleksi
+          </a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="order-1 md:order-2 relative aspect-[4/5] bg-surface-container overflow-hidden">
+        <img src="/images/story-couple.png" alt="The romantic story behind DYLORY Parfums — Dyan and Ryan"
+          class="w-full h-full object-cover" loading="lazy" />
+        <div
+          class="absolute -bottom-6 -left-6 w-36 h-36 md:w-48 md:h-48 bg-primary-fixed-dim/30 backdrop-blur-sm -z-10">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       COLLECTIONS — For Her & For Him
+       ════════════════════════════════════════════ -->
+  <section id="collections" class="py-20 md:py-32 bg-surface fade-in-section">
+    <div class="px-6 md:px-12 mb-16 md:mb-20 text-center">
+      <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-4 block">Koleksi Kami</span>
+      <h2 class="font-headline text-3xl md:text-5xl text-on-surface mb-4">The Collections</h2>
+      <div class="w-24 h-[1px] bg-outline mx-auto"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 min-h-[500px] md:h-[700px]">
+      <!-- For Her -->
+      <a href="#bestsellers-women" class="relative group cursor-pointer overflow-hidden block">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary-fixed-dim/20 to-primary/30"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img src="/images/dylory-parfum.jpg" alt="DYLORY Women's Collection"
+            class="w-48 md:w-64 h-auto object-contain transition-transform duration-1000 group-hover:scale-110 drop-shadow-2xl"
+            loading="lazy" />
+        </div>
+        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        </div>
+        <div class="absolute bottom-8 md:bottom-12 left-8 md:left-12 text-on-surface z-10">
+          <h3 class="font-headline text-3xl md:text-4xl mb-2">For Her</h3>
+          <p class="font-label tracking-widest uppercase text-xs text-on-surface/60">Petals &amp; Silks</p>
+        </div>
+      </a>
+      <!-- For Him -->
+      <a href="#bestsellers-men" class="relative group cursor-pointer overflow-hidden block bg-on-surface">
+        <div class="absolute inset-0 bg-gradient-to-bl from-on-surface via-inverse-surface to-tertiary-container"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img src="/images/dylory-parfum.jpg" alt="DYLORY Men's Collection"
+            class="w-48 md:w-64 h-auto object-contain transition-transform duration-1000 group-hover:scale-110 drop-shadow-2xl grayscale contrast-125"
+            loading="lazy" />
+        </div>
+        <div
+          class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        </div>
+        <div class="absolute bottom-8 md:bottom-12 left-8 md:left-12 text-white z-10">
+          <h3 class="font-headline text-3xl md:text-4xl mb-2">For Him</h3>
+          <p class="font-label tracking-widest uppercase text-xs text-white/60">Woods &amp; Amber</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       BEST SELLERS — Women's Collection
+       ════════════════════════════════════════════ -->
+  <section id="bestsellers-women" class="py-20 md:py-32 px-6 md:px-12 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto fade-in-section">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 md:mb-20 gap-4">
+        <div>
+          <span class="font-label text-xs tracking-[0.4em] uppercase text-primary mb-4 block">For Her — Petals &amp;
+            Silks</span>
+          <h2 class="font-headline text-3xl md:text-5xl text-on-surface">Best Sellers</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+
+        <!-- Woman 1: Davidav Women -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Davidav Women Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Davidav Women</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Floral musk, soft petals</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 2: Taylor Swift -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed-dim/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Taylor Swift Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Taylor Swift</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Wild berries, warm amber</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 3: Cussion -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-secondary-container/30 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Cussion Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Cussion</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Fresh citrus, clean cotton</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 4: V.S Romance -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="V.S Romance Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">V.S Romance</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Rose, peony, sensual musk</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 5: Nagita Slavina -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed-dim/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Nagita Slavina Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Nagita Slavina</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Elegant jasmine, lily</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 6: Escada Cherry -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-secondary-container/30 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Escada Cherry Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Escada Cherry</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Sweet cherry, vanilla</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 7: Selenaa Gomes -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Selenaa Gomes Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Selenaa Gomes</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Raspberry, vanilla orchid</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 8: Scandalus -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed-dim/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Scandalus Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Scandalus</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Bold gardenia, night musk</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 9: Black Opium -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-secondary-container/30 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Black Opium Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+            <div
+              class="absolute top-3 right-3 bg-primary px-2 py-1 text-on-primary text-[9px] tracking-widest uppercase font-label font-bold">
+              Favorit</div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Black Opium</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Coffee, vanilla, white flowers</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Woman 10: Anasui The Fancy -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-primary-fixed/20 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Anasui The Fancy Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Anasui The Fancy</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Oriental floral, amber</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       BEST SELLERS — Men's Collection
+       ════════════════════════════════════════════ -->
+  <section id="bestsellers-men" class="py-20 md:py-32 px-6 md:px-12 bg-surface">
+    <div class="max-w-7xl mx-auto fade-in-section">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 md:mb-20 gap-4">
+        <div>
+          <span class="font-label text-xs tracking-[0.4em] uppercase text-on-surface/50 mb-4 block">For Him — Woods
+            &amp; Amber</span>
+          <h2 class="font-headline text-3xl md:text-5xl text-on-surface">Best Sellers</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+
+        <!-- Men 1: Baccarat Rouge -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container-high/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Baccarat Rouge Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+            <div
+              class="absolute top-3 right-3 bg-on-surface px-2 py-1 text-white text-[9px] tracking-widest uppercase font-label font-bold">
+              Favorit</div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Baccarat Rouge</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Saffron, jasmine, cedarwood</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 2: Bulgari Aqua -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Bulgari Aqua Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Bulgari Aqua</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Aquatic, neroli, seaweed</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 3: Bulgari Extrem -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container-high/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Bulgari Extrem Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Bulgari Extrem</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Grapefruit, vetiver, musk</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 4: JLo Still -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="JLo Still Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">JLo Still</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">White pepper, mandarin</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 5: D&G -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container-high/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="D&G Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">D&amp;G</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Sicilian lemon, cedar</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 6: Eros Blue -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Eros Blue Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Eros Blue</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Mint, tonka bean, geranium</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 7: Jo Malone -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container-high/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Jo Malone Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Jo Malone</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">English pear, freesia</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 8: Aigner Black -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Aigner Black Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Aigner Black</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Leather, oud, dark tonka</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 9: C. Dior -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container-high/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="C. Dior Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">C. Dior</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Bergamot, ambroxan, cedar</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+        <!-- Men 10: Paris H. -->
+        <div class="product-card group stagger-child">
+          <div class="relative aspect-[3/4] mb-4 md:mb-6 bg-surface-container-lowest overflow-hidden">
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-b from-surface-container/50 to-surface-container-lowest p-6">
+              <img src="/images/dylory-parfum.jpg" alt="Paris H. Perfume by DYLORY"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-lg"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-1 px-1">
+            <h4 class="font-headline text-sm md:text-base text-on-surface leading-tight">Paris H.</h4>
+            <p class="font-body text-xs text-on-surface/40 italic">Iris, vetiver, sandalwood</p>
+            <p class="font-label text-primary font-bold text-sm">Rp 150.000</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       WhatsApp CTA Banner
+       ════════════════════════════════════════════ -->
+  <section class="py-20 md:py-28 px-6 bg-gradient-to-br from-primary to-primary-container text-center fade-in-section">
+    <div class="max-w-3xl mx-auto">
+      <span class="font-label text-xs tracking-[0.4em] uppercase text-primary-fixed-dim mb-6 block">Pesan
+        Sekarang</span>
+      <h2 class="font-headline text-3xl md:text-5xl text-white mb-6 leading-tight">
+        Temukan Aroma<br />Ceritamu
+      </h2>
+      <p class="font-body text-white/70 text-base md:text-lg mb-10 max-w-xl mx-auto">
+        Konsultasikan parfum impianmu langsung dengan tim DYLORY melalui WhatsApp. Kami siap membantu menemukan wangi
+        yang sempurna untukmu.
+      </p>
+      <a href="https://wa.me/6285951811245?text=Halo%20DYLORY%2C%20saya%20tertarik%20untuk%20memesan%20parfum..."
+        target="_blank" rel="noopener"
+        class="inline-flex items-center gap-3 bg-white text-primary px-10 py-5 font-label font-bold tracking-widest uppercase text-sm hover:bg-primary-fixed transition-colors duration-300">
+        <!-- WhatsApp SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Hubungi via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════ -->
+  <footer id="contact" class="bg-surface-container-low py-16 md:py-20 px-6 md:px-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 max-w-7xl mx-auto">
+
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="text-xl font-bold font-headline text-on-surface mb-6 uppercase tracking-[0.25em]">DYLORY</div>
+        <p class="font-body text-sm text-on-surface/50 leading-relaxed mb-6">
+          Menciptakan pengalaman aroma yang menghubungkan hati dan indra. Dibuat dengan cinta, untuk cinta.
+        </p>
+        <p class="font-headline italic text-sm text-primary/70">
+          "Cinta punya aromanya sendiri"
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs font-bold uppercase tracking-widest mb-2 text-on-surface">Jelajahi</span>
+        <a href="#story" class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm">Cerita
+          Kami</a>
+        <a href="#collections"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm">Koleksi</a>
+        <a href="#bestsellers-women"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm">Best Sellers Wanita</a>
+        <a href="#bestsellers-men"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm">Best Sellers Pria</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs font-bold uppercase tracking-widest mb-2 text-on-surface">Hubungi Kami</span>
+        <a href="https://wa.me/6285951811245?text=Halo%20DYLORY%2C%20saya%20tertarik%20untuk%20memesan%20parfum..."
+          target="_blank" rel="noopener"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          085951811245
+        </a>
+      </div>
+
+      <!-- Social Media -->
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs font-bold uppercase tracking-widest mb-2 text-on-surface">Ikuti Kami</span>
+        <!-- SOCIAL MEDIA LINKS — Edit URLs below -->
+        <a href="https://instagram.com/dylory.parfums" target="_blank" rel="noopener" id="social-instagram"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm flex items-center gap-2">
+          <!-- Instagram Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+          @dylory.parfums
+        </a>
+        <a href="https://tiktok.com/@dylory.official" target="_blank" rel="noopener" id="social-tiktok"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm flex items-center gap-2">
+          <!-- TikTok Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.12z" />
+          </svg>
+          @dylory.official
+        </a>
+        <a href="https://facebook.com/dyloryparfums" target="_blank" rel="noopener" id="social-facebook"
+          class="text-on-surface/50 hover:text-primary transition-colors font-label text-sm flex items-center gap-2">
+          <!-- Facebook Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+          Dylory Parfums
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto mt-16 md:mt-20 pt-8 border-t border-outline-variant/20 text-center">
+      <p class="font-body text-xs text-on-surface/40 tracking-widest uppercase">
+        &copy; 2026 DYLORY Parfums. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════
+       FLOATING WhatsApp BUTTON
+       ════════════════════════════════════════════ -->
+  <a href="https://wa.me/6285951811245?text=Halo%20DYLORY%2C%20saya%20tertarik%20untuk%20memesan%20parfum..."
+    target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat via WhatsApp" id="whatsapp-float-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+</body>
+
+</html>

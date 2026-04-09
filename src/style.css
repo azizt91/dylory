@@ -1,0 +1,237 @@
+/* ============================================
+   DYLORY Parfums — Design System Stylesheet
+   The Cinematic Muse
+   ============================================ */
+
+/* ── Google Fonts (must precede @tailwind) ── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Layer ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1c1c;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #ffb2bc;
+    color: #400013;
+  }
+
+  /* Ultra-thin Material Icons per DESIGN.md */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+/* ── Component Layer ── */
+@layer components {
+
+  /* Silver Edge — Glass & Silver execution */
+  .silver-edge {
+    box-shadow: inset 0 0 0 1px rgba(222, 191, 194, 0.3);
+  }
+
+  /* Ghost Border — faint silver thread for accessibility */
+  .ghost-border {
+    box-shadow: inset 0 0 0 1px rgba(222, 191, 194, 0.15);
+  }
+
+  /* Ambient Shadow — ultra-diffused, felt not seen */
+  .ambient-shadow {
+    box-shadow: 0 12px 40px 0 rgba(26, 28, 28, 0.04);
+  }
+
+  /* Glassmorphism Navigation */
+  .glass-nav {
+    background: rgba(249, 249, 249, 0.70);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: inset 0 0 0 1px rgba(222, 191, 194, 0.3);
+  }
+
+  /* Primary Gradient Button — velvety petal-like depth */
+  .btn-primary {
+    background: radial-gradient(ellipse at 30% 50%, #8e1b3b, #6d0026);
+    color: #ffffff;
+    padding: 1.25rem 3rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  /* Secondary Button — Silver Border */
+  .btn-secondary {
+    background: #f9f9f9;
+    border: 1px solid rgba(138, 113, 116, 0.5);
+    color: #6d0026;
+    padding: 1rem 2.5rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover {
+    background: #f3f3f3;
+    border-color: rgba(138, 113, 116, 0.8);
+  }
+
+  /* Product Card Interaction — pressed-in tactile feel */
+  .product-card {
+    background: #ffffff;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+  }
+  .product-card:hover {
+    background: #f3f3f3;
+  }
+
+  /* Expanding underline for tertiary links */
+  .link-expand {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .link-expand::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 3rem;
+    background: #debfc2;
+    transition: width 0.5s ease;
+  }
+  .link-expand:hover::after {
+    width: 5rem;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    background: #25D366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.45);
+  }
+  .whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+  }
+}
+
+/* ── Utility Layer ── */
+@layer utilities {
+
+  /* Scroll-triggered fade-in animation */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children animation */
+  .fade-in-section.is-visible .stagger-child:nth-child(1) { transition-delay: 0.1s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(2) { transition-delay: 0.2s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(3) { transition-delay: 0.3s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(4) { transition-delay: 0.35s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(5) { transition-delay: 0.4s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(6) { transition-delay: 0.45s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(7) { transition-delay: 0.5s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(8) { transition-delay: 0.55s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(9) { transition-delay: 0.6s; }
+  .fade-in-section.is-visible .stagger-child:nth-child(10) { transition-delay: 0.65s; }
+
+  .stagger-child {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-section.is-visible .stagger-child {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero parallax-like subtle float */
+  @keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .hero-float {
+    animation: heroFloat 6s ease-in-out infinite;
+  }
+
+  /* Petal fall keyframe */
+  @keyframes petalFall {
+    0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  .petal {
+    position: absolute;
+    width: 12px;
+    height: 16px;
+    background: radial-gradient(ellipse, #ffb2bc, #ffd9dd);
+    border-radius: 50% 0 50% 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Mobile menu transitions */
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .mobile-menu.is-open {
+    transform: translateX(0);
+  }
+
+  /* Nav scroll state */
+  .nav-scrolled {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    box-shadow: 0 4px 24px rgba(26, 28, 28, 0.04);
+  }
+}
