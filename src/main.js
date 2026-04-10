@@ -11,7 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initNavScrollState();
   initPetalAnimation();
+  initCopyrightYear();
 });
+
+/* ── Dynamic Copyright Year ── */
+function initCopyrightYear() {
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+}
 
 /* ── Mobile Navigation Toggle ── */
 function initMobileNav() {
