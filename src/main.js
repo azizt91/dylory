@@ -156,7 +156,7 @@ function initRegionManager() {
       if (btn.tagName === 'A') e.preventDefault();
 
       applyRegion(region, true);
-      
+
       // Close modal if it was open
       if (modal && !modal.classList.contains('is-hidden')) {
         modal.classList.add('is-hidden');
@@ -168,7 +168,7 @@ function initRegionManager() {
   function applyRegion(region, animate) {
     const prices = document.querySelectorAll('.product-price');
     const waLinks = document.querySelectorAll('a[href*="wa.me"]');
-    
+
     localStorage.setItem('dylory-region', region);
 
     // Sync all switchers active state
@@ -193,10 +193,10 @@ function initRegionManager() {
     });
 
     // Update WhatsApp links message
-    const msg = region === 'tw' 
-      ? 'Halo DYLORY Taiwan, saya ingin pesan...' 
+    const msg = region === 'tw'
+      ? 'Halo DYLORY Taiwan, saya ingin pesan...'
       : 'Halo DYLORY Indonesia, saya ingin pesan...';
-    
+
     waLinks.forEach(link => {
       try {
         const url = new URL(link.href);
