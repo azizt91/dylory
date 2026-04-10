@@ -153,6 +153,170 @@
     height: 32px;
     fill: #ffffff;
   }
+
+  /* ── Region Selection Modal ── */
+  .region-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .region-modal.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .region-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 28, 28, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .region-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 520px;
+    background: #f9f9f9;
+    box-shadow: 
+      0 32px 80px rgba(0, 0, 0, 0.25),
+      inset 0 0 0 1px rgba(222, 191, 194, 0.3);
+    padding: 3rem 2rem;
+    text-align: center;
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+    animation: modalReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+  }
+
+  @keyframes modalReveal {
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .region-modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .region-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background: #ffffff;
+    border: 1px solid rgba(222, 191, 194, 0.3);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .region-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 120%, rgba(142, 27, 59, 0.06), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .region-btn:hover {
+    border-color: rgba(142, 27, 59, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(142, 27, 59, 0.08);
+  }
+
+  .region-btn:hover::before {
+    opacity: 1;
+  }
+
+  .region-btn:active {
+    transform: translateY(0);
+    background: radial-gradient(ellipse at 30% 50%, #8e1b3b, #6d0026);
+  }
+  .region-btn:active span {
+    color: #ffffff !important;
+  }
+
+  /* ── New Region Switcher UI ── */
+  .region-switch-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .region-switch-btn {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(26, 28, 28, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+    padding: 2px 0;
+  }
+
+  .region-switch-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #8e1b3b;
+    transition: width 0.4s ease;
+  }
+
+  .region-switch-btn.is-active {
+    color: #1a1c1c;
+    font-weight: 800;
+  }
+
+  .region-switch-btn.is-active::after {
+    width: 100%;
+    height: 1.5px;
+  }
+
+  .region-switch-btn:hover:not(.is-active) {
+    color: #8e1b3b;
+  }
+
+  .region-switch-divider {
+    width: 1px;
+    height: 12px;
+    background-color: rgba(222, 191, 194, 0.4);
+  }
+
+  /* Mobile bottom switcher container */
+  .mobile-region-unit {
+    display: flex;
+    width: 100%;
+    background: #f9f9f9;
+    padding: 2rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(222, 191, 194, 0.2);
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .mobile-region-unit .region-switch-btn {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+  }
 }
 
 /* ── Utility Layer ── */
@@ -219,13 +383,48 @@
     pointer-events: none;
   }
 
-  /* Mobile menu transitions */
+  /* Mobile menu refinements */
   .mobile-menu {
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: rgba(249, 249, 249, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .mobile-menu.is-open {
     transform: translateX(0);
+  }
+
+  .mobile-menu nav a {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .mobile-menu.is-open nav a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered entry for menu links inside nav */
+  .mobile-menu.is-open nav a:nth-child(1) { transition-delay: 0.15s; }
+  .mobile-menu.is-open nav a:nth-child(2) { transition-delay: 0.2s; }
+  .mobile-menu.is-open nav a:nth-child(3) { transition-delay: 0.25s; }
+  .mobile-menu.is-open nav a:nth-child(4) { transition-delay: 0.3s; }
+  .mobile-menu.is-open nav a:nth-child(5) { transition-delay: 0.35s; }
+
+  /* Bottom CTA entry */
+  .mobile-menu .mt-auto {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+  }
+  .mobile-menu.is-open .mt-auto {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Nav scroll state */

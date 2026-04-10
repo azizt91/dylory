@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavScrollState();
   initPetalAnimation();
   initCopyrightYear();
+  initRegionManager();
 });
 
 /* ── Dynamic Copyright Year ── */
@@ -124,5 +125,88 @@ function initPetalAnimation() {
     petal.style.width = (8 + Math.random() * 10) + 'px';
     petal.style.height = (10 + Math.random() * 12) + 'px';
     hero.appendChild(petal);
+  }
+}
+
+/* ── Region Manager (Pricing & Selection) ── */
+function initRegionManager() {
+  const modal = document.getElementById('region-modal');
+  const switchBtns = document.querySelectorAll('.region-switch-btn');
+
+  const savedRegion = localStorage.getItem('dylory-region');
+
+  // Handle Initial State
+  if (savedRegion) {
+    applyRegion(savedRegion, false);
+    if (modal) modal.classList.add('is-hidden');
+  } else {
+    if (modal) {
+      modal.classList.remove('is-hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  // Unified Selection Listener for all switcher buttons
+  switchBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const region = btn.getAttribute('data-region');
+      if (!region) return;
+
+      // Prevent potential link jumps if buttons are inside anchor tags
+      if (btn.tagName === 'A') e.preventDefault();
+
+      applyRegion(region, true);
+      
+      // Close modal if it was open
+      if (modal && !modal.classList.contains('is-hidden')) {
+        modal.classList.add('is-hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  function applyRegion(region, animate) {
+    const prices = document.querySelectorAll('.product-price');
+    const waLinks = document.querySelectorAll('a[href*="wa.me"]');
+    
+    localStorage.setItem('dylory-region', region);
+
+    // Sync all switchers active state
+    switchBtns.forEach(btn => {
+      if (btn.getAttribute('data-region') === region) {
+        btn.classList.add('is-active');
+      } else {
+        btn.classList.remove('is-active');
+      }
+    });
+
+    // Update Prices with optional fade
+    prices.forEach(el => {
+      if (animate) {
+        el.style.transition = 'opacity 0.3s ease';
+        el.style.opacity = '0';
+      }
+      setTimeout(() => {
+        el.textContent = region === 'id' ? 'Rp 65.000' : '450 NTD';
+        if (animate) el.style.opacity = '1';
+      }, animate ? 300 : 0);
+    });
+
+    // Update WhatsApp links message
+    const msg = region === 'tw' 
+      ? 'Halo DYLORY Taiwan, saya ingin pesan...' 
+      : 'Halo DYLORY Indonesia, saya ingin pesan...';
+    
+    waLinks.forEach(link => {
+      try {
+        const url = new URL(link.href);
+        url.searchParams.set('text', msg);
+        link.href = url.toString();
+      } catch (err) {
+        // Fallback for malformed URLs
+        const baseUrl = link.href.split('?')[0];
+        link.href = `${baseUrl}?text=${encodeURIComponent(msg)}`;
+      }
+    });
   }
 }
