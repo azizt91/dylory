@@ -236,6 +236,14 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.4);
+  }
+
+  /* High-legibility aura for dark text on busy backgrounds */
+  .brand-aura {
+    text-shadow: 
+      0 0 8px rgba(255, 255, 255, 1),
+      0 0 16px rgba(255, 255, 255, 0.6),
+      0 0 32px rgba(255, 255, 255, 0.3);
   }
 }
